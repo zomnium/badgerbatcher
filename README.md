@@ -1,2 +1,4 @@
-# badgerbatcher
-Batch helper for WordPress.
+
+# Badger Batcher
+
+Plugin for batch processing data within WordPress.
