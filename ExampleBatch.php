@@ -5,7 +5,8 @@
  * Does absolutely nothing :) 
  */
 
-class ExampleBatch extends BadgerBatcherAPI implements BadgerBatch
+// class ExampleBatch extends BadgerBatcherAPI implements BadgerBatch
+class ExampleBatch implements BadgerBatch
 {
 	/**
 	 * Content

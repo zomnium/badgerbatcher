@@ -80,3 +80,6 @@ class BadgerBatcher
 
 // Initialize plugin
 $badgerbatcher = new BadgerBatcher();
+
+// Batch Example
+include 'ExampleBatch.php';
