@@ -46,6 +46,17 @@ class BadgerBatcher
 	}
 
 	/**
+	 * Log
+	 * @var string $postId
+	 * @var string $message
+	 * @return null
+	 */
+	public function log($postId, $message)
+	{
+		echo '<p><strong>'.$postId.'</strong> '.$message."</p>\n";
+	}
+
+	/**
 	 * AdminNavigation
 	 * Registers options page to admin navigation.
 	 */
