@@ -7,13 +7,12 @@
 	</div>
 	<hr>
 	<h3>Let the badger run through your content!</h3>
+	<p>Please select which batch process you want to run right now:</p>
 	<form action="" method="POST">
-		<select name="batch" id="batch">
-		<option disabled selected>Choose your batch process</option>
 		<?php foreach ($this->batches as $key => $value) : ?>
-			<option value="<?php echo $value; ?>"><?php echo $key; ?></option>
+		<p><label for=""><input type="radio" value="<?php echo $value; ?>"> <?php echo $key; ?></label></p>
 		<?php endforeach; ?>
 		</select>
-		<input type="submit" value="Let the badger batch!">
+		<p><input id="submit" class="button button-primary" type="submit" value="Let the badger batch!" name="submit"></p>
 	</form>
 </div>
