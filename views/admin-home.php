@@ -10,7 +10,12 @@
 	<p>Please select which batch process you want to run right now:</p>
 	<form action="" method="POST">
 		<?php foreach ($this->batches as $key => $value) : ?>
-		<p><label for=""><input type="radio" value="<?php echo $value; ?>"> <?php echo $key; ?></label></p>
+		<p>
+			<label for="<?php echo $value; ?>">
+				<input type="radio" value="<?php echo $value; ?>" id="<?php echo $value; ?>"> 
+				<?php echo $key; ?>
+			</label>
+		</p>
 		<?php endforeach; ?>
 		</select>
 		<p><input id="submit" class="button button-primary" type="submit" value="Let the badger batch!" name="submit"></p>
