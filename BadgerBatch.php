@@ -20,20 +20,14 @@ interface BadgerBatch
 	public function execute();
 
 	/**
-	 * Preprocess
-	 * Runs before the process, useful for any validation.
+	 * Validate
+	 * See if the current post meets your requirements before proceeding.
 	 */
-	public function preprocess();
+	public function validate();
 
 	/**
-	 * Process
+	 * Task
 	 * Execute the task(s) that need to be done.
 	 */
-	public function process();
-
-	/**
-	 * Postprocess
-	 * Executed after the process, used for updating the content in WordPress.
-	 */
-	public function postprocess();
+	public function task();
 }
