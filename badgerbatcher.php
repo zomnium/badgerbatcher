@@ -9,6 +9,12 @@ Description: Badger the batch processing helper.
 */
 
 /**
+ * Require
+ */
+
+require 'BadgerBatch.php';
+
+/**
  * Plugin
  */
 
@@ -34,15 +40,6 @@ class BadgerBatcher
 	{
 		// Save batch process in registry
 		$this->batches[$name] = $class;
-	}
-
-	/**
-	 * Get
-	 * @return array
-	 */
-	public function get()
-	{
-		return $this->batches;
 	}
 }
 
