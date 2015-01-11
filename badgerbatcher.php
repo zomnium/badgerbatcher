@@ -71,8 +71,6 @@ class BadgerBatcher
 		if ( ! current_user_can( 'manage_options') )
 			wp_die( 'You do not have the rights to be here, sorry.' );
 
-		var_dump($this->batches);
-
 		// Show admin home
 		include 'views/admin-home.php';
 	}
