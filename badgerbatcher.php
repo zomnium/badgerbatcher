@@ -22,7 +22,6 @@ class BadgerBatcher
 {
 	private $batches;
 	private $logs;
-	private $ui;
 
 	public function __construct()
 	{
@@ -53,7 +52,7 @@ class BadgerBatcher
 	 */
 	public function log($postId, $message)
 	{
-		echo '<p><strong>'.$postId.'</strong> '.$message."</p>\n";
+		$this->logs[$postId] = $message;
 	}
 
 	/**
