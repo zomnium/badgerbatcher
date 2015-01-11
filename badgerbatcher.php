@@ -13,6 +13,7 @@ Description: Badger the batch processing helper.
  */
 
 require 'BadgerBatch.php';
+require 'BadgerBatchApi.php';
 
 /**
  * Plugin
@@ -21,7 +22,6 @@ require 'BadgerBatch.php';
 class BadgerBatcher
 {
 	private $batches;
-	private $logs;
 
 	public function __construct()
 	{
@@ -42,17 +42,6 @@ class BadgerBatcher
 	{
 		// Save batch process in registry
 		$this->batches[$name] = $class;
-	}
-
-	/**
-	 * Log
-	 * @var string $postId
-	 * @var string $message
-	 * @return null
-	 */
-	public function log($postId, $message)
-	{
-		$this->logs[$postId] = $message;
 	}
 
 	/**
@@ -93,7 +82,49 @@ class BadgerBatcher
 		}
 
 		// Let's batch!
+		$batch = $this->batch( $_POST['batch'] );
+		$logs = $batch->getLogs();
 		include 'views/admin-batch.php';
+	}
+
+	/**
+	 * Batch
+	 * Runs the batch process itself.
+	 * @var string $batch
+	 * @return null
+	 */
+	public function batch($batch)
+	{
+		// Batch class does not exist
+		if ( ! class_exists($batch) )
+			return false;
+
+		// Create batch instance
+		$batch = new $batch;
+
+		// Get content
+		$content = $batch->content();
+
+		// Content was found
+		if ($batch->execute($content))
+		{
+			// Loop through content
+			while ($batch->execute($content))
+			{
+				// When valid execute task
+				if ($batch->validate($content))
+					$batch->task($content);
+			}
+
+			// Return batch object
+			return $batch;
+		}
+
+		// No content found... to be implemented
+		else
+		{
+			echo 'niiiiets';
+		}
 	}
 }
 

@@ -17,17 +17,17 @@ interface BadgerBatch
 	 * Execute
 	 * Loop through filtered results.
 	 */
-	public function execute();
+	public function execute($content);
 
 	/**
 	 * Validate
 	 * See if the current post meets your requirements before proceeding.
 	 */
-	public function validate();
+	public function validate($item);
 
 	/**
 	 * Task
 	 * Execute the task(s) that need to be done.
 	 */
-	public function task();
+	public function task($item);
 }
