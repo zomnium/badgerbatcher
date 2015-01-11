@@ -12,7 +12,7 @@
 		<?php foreach ($this->batches as $key => $value) : ?>
 		<p>
 			<label for="<?php echo $value; ?>">
-				<input type="radio" value="<?php echo $value; ?>" id="<?php echo $value; ?>"> 
+				<input type="radio" value="<?php echo $value; ?>" id="<?php echo $value; ?>" name="batch"> 
 				<?php echo $key; ?>
 			</label>
 		</p>
