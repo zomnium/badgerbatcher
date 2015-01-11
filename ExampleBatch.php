@@ -26,13 +26,15 @@ class ExampleBatch implements BadgerBatch
 	 * Validate
 	 * See if the current post meets your requirements before proceeding.
 	 */
-	public function validate();
+	public function validate()
+	{}
 
 	/**
 	 * Task
 	 * Execute the task(s) that need to be done.
 	 */
-	public function task();
+	public function task()
+	{}
 }
 
 // Add batch process to Badger Batcher
