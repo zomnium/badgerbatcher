@@ -2,6 +2,7 @@
 
 /**
  * Example Batch
+ * Does absolutely nothing :) 
  */
 
 class ExampleBatch extends BadgerBatcherAPI implements BadgerBatch
