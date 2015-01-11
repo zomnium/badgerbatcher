@@ -1,10 +1,12 @@
 
 <div class="wrap">
 	<h2>Badger Batcher</h2>
-	<h3></h3>
-	<p>Always run a backup first. So if something goes wrong you'll still have your content. There is no undo button! Please, do this first.</p>
+	<div style="max-width:45em;">
+		<p><strong>Important:</strong> always run a backup first. There is no undo button! That means you can't go back. When something doesn't work out the way you would like, you're pretty much screwed if you didn't make a backup.</p>
+		<p>That had to be said, now let's have some fun! :)</p>
+	</div>
 	<hr>
-	<h3>Let's run some batch processes on your content!</h3>
+	<h3>Let the badger run through your content!</h3>
 	<form action="">
 		<select name="batch" id="batch">
 		<option disabled selected>Choose your batch process</option>
@@ -12,6 +14,6 @@
 			<option value="<?php echo $value; ?>"><?php echo $key; ?></option>
 		<?php endforeach; ?>
 		</select>
-		<input type="submit" value="Batch the badger!">
+		<input type="submit" value="Let the badger batch!">
 	</form>
 </div>
