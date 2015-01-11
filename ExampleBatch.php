@@ -45,4 +45,5 @@ class ExampleBatch implements BadgerBatch
 }
 
 // Add batch process to Badger Batcher
-$badgerbatcher->add('Example: does nothing', 'ExampleBatch');
+if ( class_exists('BadgerBatcher') && isset($badgerbatcher) )
+	$badgerbatcher->add('Example: does nothing', 'ExampleBatch');
