@@ -82,7 +82,18 @@ class BadgerBatcher
 			wp_die( 'You do not have the rights to be here, sorry.' );
 
 		// Show admin home
-		include 'views/admin-home.php';
+		if ( ! isset( $_POST['batch'] ) )
+			return include 'views/admin-home.php';
+
+		// Invalid batch was send
+		if ( ! in_array( $_POST['batch'], $this->batches ) )
+		{
+			echo 'Error!';
+			return false;
+		}
+
+		// Let's batch!
+		include 'views/admin-batch.php';
 	}
 }
 

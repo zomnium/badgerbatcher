@@ -7,7 +7,7 @@
 	</div>
 	<hr>
 	<h3>Let the badger run through your content!</h3>
-	<form action="">
+	<form action="" method="POST">
 		<select name="batch" id="batch">
 		<option disabled selected>Choose your batch process</option>
 		<?php foreach ($this->batches as $key => $value) : ?>
