@@ -7,6 +7,15 @@
 
 class ExampleBatch extends BadgerBatchApi implements BadgerBatch
 {
+	public function register()
+	{
+		return array(
+			'name'		=> 'examplebatch',
+			'title'		=> 'Example: does ham n eggs',
+			'instance'	=> $this,
+		);
+	}
+
 	/**
 	 * Content
 	 * Get the content that needs processing.
